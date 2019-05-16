@@ -1469,6 +1469,17 @@ module Libxlsxwriter
   # @scope class
   attach_function :worksheet_assemble_xml_file, :lxw_worksheet_assemble_xml_file, [Worksheet], :void
 
+  # @method worksheet_new(init_data)
+  # @param [Worksheet] init_data 
+  # @param [Integer] first_row
+  # @param [Integer] first_col
+  # @param [Integer] last_row
+  # @param [Integer] last_col
+  # @param [lxw_data_validation] lxw_data_validation
+  # @return [Worksheet] 
+  # @scope class
+  attach_function :worksheet_data_validation, :worksheet_data_validation_range, [Worksheet, :uint32, :uint32, :uint32, :uint32, lxw_data_validation], :error
+
   # @method worksheet_write_single_row(worksheet)
   # @param [Worksheet] worksheet 
   # @return [nil] 
